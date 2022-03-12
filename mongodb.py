@@ -7,23 +7,23 @@ db = client["huwebshop"]
 
 def products():
     products_col = db["products"]
-    products = [x for x in products_col.find()]
-    col = ['_id', 'category', 'price', 'gender', 'brand', 'sub_category']
-    df = pd.DataFrame(products, columns=col)
-    df.to_csv("products", index=False)
+    col = {'_id': 1, 'category': 1, 'price': 1, 'gender': 1, 'brand': 1, 'sub_category': 1}
+    products = [x for x in products_col.find({}, col)]
+    df = pd.DataFrame(products)
+    df.to_csv("products.csv", index=False)
 
 def profiles():
     profiles_col = db["profiles"]
-    profiles = [x for x in profiles_col.find()]
-    col2 = ['_id', 'recommendations', 'previously_recommended']
-    df = pd.DataFrame(profiles, columns=col2)
-    df.to_csv("profiles", index=False)
+    col2 = {'_id':1 , 'recommendations':1 , 'previously_recommended':1}
+    profiles = [x for x in profiles_col.find({}, col2)]
+    df = pd.DataFrame(profiles)
+    df.to_csv("profiles.csv", index=False)
 
 def sessions():
     sessions_col = db["sessions"]
-    sessions = [x for x in sessions_col.find()]
-    col3 = ['_id', 'buid', 'preferences']
-    df = pd.DataFrame(sessions, columns=col3)
-    df.to_csv("sessions", index=False)
+    col3 = {'_id': 1, 'buid': 1, 'preferences': 1}
+    sessions = [x for x in sessions_col.find({}, col3)]
+    df = pd.DataFrame(sessions)
+    df.to_csv("sessions.csv", index=False)
 
-sessions()
+profiles()
