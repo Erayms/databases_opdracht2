@@ -39,7 +39,8 @@ CREATE TABLE sessions(
    preferences varchar(100))                     
 ''')
 
-cursor.execute(info)
+for x in info:
+   cursor.execute(x)
 con.commit()
 con.close()
 
