@@ -1,5 +1,8 @@
 import psycopg2
 
+#BRON VOOR TABLE IN PYTHON NAAR SQL:https://www.tutorialspoint.com/python_data_access/python_postgresql_create_table.htm#:~:text=You%20can%20create%20a%20new,names%20and%20their%20data%20types.
+
+
 # vul je eigen gegevens in van de sql database, !verander alleen de database en wachtwoord!
 con = psycopg2.connect(
         host='localhost',
@@ -12,7 +15,6 @@ cursor = con.cursor()
 cursor.execute("DROP TABLE IF EXISTS products")
 cursor.execute("DROP TABLE IF EXISTS profiles")
 cursor.execute("DROP TABLE IF EXISTS sessions")
-
 info = (
    '''
 CREATE TABLE products(
