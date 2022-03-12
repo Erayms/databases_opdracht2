@@ -2,6 +2,8 @@
 
 -POSTGRESQL
 
+-MONGODB
+
 -PYTHON
 
 groeps opdracht Document Store naar Relationale Database
