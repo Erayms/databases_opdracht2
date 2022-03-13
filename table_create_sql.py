@@ -18,7 +18,7 @@ cursor.execute("DROP TABLE IF EXISTS sessions")
 info = (
    '''
 CREATE TABLE products(
-   _id varchar(100) PRIMARY KEY,
+   _id varchar(100),
    brand varchar(100),
    category text,
    gender varchar(100),
@@ -29,15 +29,15 @@ CREATE TABLE products(
 ''',
 '''
 CREATE TABLE profiles(
-   _id varchar(100) PRIMARY KEY,
+   _id varchar(100),
    buids text,
-   recommendations text
+   recommendations varchar
    )
 ''',# recommendations werkt denk ik niet want het is een object, maar ik wil alleen viewed_before en similars.
 '''
 CREATE TABLE sessions(
-   _id varchar(100),
-   buid varchar(100) PRIMARY KEY,
+   _id varchar,
+   buid varchar,
    preferences text
    )                     
 ''')# preferences werkt denk ik niet want het is een object
