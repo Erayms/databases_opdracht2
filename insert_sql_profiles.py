@@ -9,7 +9,7 @@ con = psycopg2.connect(
         password='MattyJim02')
 cursor = con.cursor()
 
-with open('profiles.csv', 'r') as f:
+with open('profiles.csv', encoding="utf-8") as f:
     next(f)
     cursor.copy_from(f, 'profiles', sep=";")
 con.commit()
