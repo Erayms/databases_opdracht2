@@ -18,31 +18,31 @@ cursor.execute("DROP TABLE IF EXISTS sessions")
 info = (
    '''
 CREATE TABLE products(
-   _id BIGSERIAL NOT NULL, 
-   naam varchar(100),
-   price int,
+   _id varchar(100) PRIMARY KEY,
    brand varchar(100),
-   category varchar(100),
-   sub_category varchar(100),
-   gender varchar(100)
+   category text,
+   gender varchar(100),
+   sub_category text,
+   sub_sub_category text 
    )
 ''',
 '''
 CREATE TABLE profiles(
-   _id BIGSERIAL NOT NULL, 
-   recommendations varchar(100),
-   previously_recommended varchar(100)
+   _id varchar(100) PRIMARY KEY,
+   buids text,
+   previously_recommended text, 
+   recommendations text
    )
-''',
+''',# recommendations werkt denk ik niet want het is een object, maar ik wil alleen viewed_before en similars.
 '''
 CREATE TABLE sessions(
-   _id BIGSERIAL NOT NULL, 
-   buid BIGSERIAL NOT NULL,
-   preferences varchar(100))                     
-''')
+   buid text PRIMARY KEY,
+   preferences text)                     
+''')# preferences werkt denk ik niet want het is een object
 
 for x in info:
    cursor.execute(x)
+
+
 con.commit()
 con.close()
-
