@@ -35,4 +35,4 @@ def sessions():
     #maakt er een csv file van om dan die in te lezen in postgresql
 
 
-profiles()
+sessions()

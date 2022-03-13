@@ -21,25 +21,24 @@ CREATE TABLE products(
    _id varchar(100) PRIMARY KEY,
    brand varchar(100),
    category text,
-   gender varchar(100), 
-   price text ARRAY,
+   gender varchar(100),
+   sub_sub_category varchar(100), 
    sub_category varchar(100)
    )
 ''',
 '''
 CREATE TABLE profiles(
-   _id BIGSERIAL NOT NULL PRIMARY KEY,
-   buids BIGSERIAL NOT NULL,
-   previously_recommended varchar(100), 
-   recommendations varchar(100)
+   _id varchar(100) PRIMARY KEY,
+   buids text,
+   previously_recommended text, 
+   recommendations text
    )
-''',
+''',# recommendations werkt denk ik niet want het is een object, maar ik wil alleen viewed_before en similars.
 '''
 CREATE TABLE sessions(
-   _id BIGSERIAL NOT NULL PRIMARY KEY, 
-   buid BIGSERIAL NOT NULL,
-   preferences varchar(100))                     
-''')
+   buid text PRIMARY KEY,
+   preferences text)                     
+''')# preferences werkt denk ik niet want het is een object
 
 for x in info:
    cursor.execute(x)
