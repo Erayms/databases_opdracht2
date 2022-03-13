@@ -43,6 +43,15 @@ CREATE TABLE sessions(
 
 for x in info:
    cursor.execute(x)
+
+
+
+
+with open("products.csv", "r") as f:
+    next(f)
+    cursor.copy_from(f, 'products', sep=',')
+
+con.commit()
 con.commit()
 con.close()
 
