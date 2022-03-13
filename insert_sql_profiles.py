@@ -11,5 +11,5 @@ cursor = con.cursor()
 
 with open('profiles.csv', encoding="utf-8") as f:
     next(f)
-    cursor.copy_from(f, 'profiles', sep=";")
+    cursor.copy_from(f, 'profiles', sep="@")
 con.commit()

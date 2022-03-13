@@ -11,7 +11,7 @@ def products():
     #pakt hier alleen de dingen met een 1 erbij
     products = [x for x in products_col.find({}, col)]
     df = pd.DataFrame(products)
-    df.to_csv("products.csv", index=False, sep=";")
+    df.to_csv("products.csv", index=False, sep="@")
     #maakt er een csv file van om dan die in te lezen in postgresql
 
 #pakt de info van de mongodb uit de collection profiles
@@ -21,7 +21,7 @@ def profiles():
     #pakt hier alleen de dingen met een 1 erbij
     profiles = [x for x in profiles_col.find({}, col2)]
     df = pd.DataFrame(profiles)
-    df.to_csv("profiles.csv", index=False, sep=";")
+    df.to_csv("profiles.csv", index=False, sep="@")
     #maakt er een csv file van om dan die in te lezen in postgresql
 
 #pakt de info van de mongodb uit de collection profiles
@@ -31,8 +31,8 @@ def sessions():
     #pakt hier alleen de dingen met een 1 erbij
     sessions = [x for x in sessions_col.find({}, col3)]
     df = pd.DataFrame(sessions)
-    df.to_csv("sessions.csv", index=False, sep=";")
+    df.to_csv("sessions.csv", index=False, sep="@")
     #maakt er een csv file van om dan die in te lezen in postgresql
 
 
-products()
+sessions()
