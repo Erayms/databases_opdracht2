@@ -18,18 +18,17 @@ cursor.execute("DROP TABLE IF EXISTS sessions")
 info = (
    '''
 CREATE TABLE products(
-   _id BIGSERIAL NOT NULL,
+   _id BIGSERIAL NOT NULL PRIMARY KEY,
    brand varchar(100),
    category varchar(100),
    gender varchar(100), 
    name varchar(100),
-   price int,
    sub_category varchar(100)
    )
 ''',
 '''
 CREATE TABLE profiles(
-   _id BIGSERIAL NOT NULL,
+   _id BIGSERIAL NOT NULL PRIMARY KEY,
    buids BIGSERIAL NOT NULL,
    previously_recommended varchar(100), 
    recommendations varchar(100)
@@ -37,7 +36,7 @@ CREATE TABLE profiles(
 ''',
 '''
 CREATE TABLE sessions(
-   _id BIGSERIAL NOT NULL, 
+   _id BIGSERIAL NOT NULL PRIMARY KEY, 
    buid BIGSERIAL NOT NULL,
    preferences varchar(100))                     
 ''')
@@ -45,13 +44,5 @@ CREATE TABLE sessions(
 for x in info:
    cursor.execute(x)
 
-
-
-
-# with open("products.csv", "r") as f:
-#     next(f)
-#     cursor.copy_from(f, 'products', sep=',')
-
-con.commit()
 con.commit()
 con.close()
