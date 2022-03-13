@@ -17,7 +17,7 @@ def products():
 #pakt de info van de mongodb uit de collection profiles
 def profiles():
     profiles_col = db["profiles"]
-    col2 = {'_id':1 , 'buids': 1, 'recommendations':1 }
+    col2 = {'_id':1 , 'buids': 1, 'recommendations.viewed_before':1, 'recommendations.similars':1}
     #pakt hier alleen de dingen met een 1 erbij
     profiles = [x for x in profiles_col.find({}, col2)]
     df = pd.DataFrame(profiles)
@@ -27,7 +27,7 @@ def profiles():
 #pakt de info van de mongodb uit de collection profiles
 def sessions():
     sessions_col = db["sessions"]
-    col3 = {'buid': 1, 'preferences': 1}
+    col3 = {'buid': 1, 'preferences.brand': 1, 'preferences.category': 1, 'preferences.sub_category': 1, 'preferences.sub_sub_category': 1}
     #pakt hier alleen de dingen met een 1 erbij
     sessions = [x for x in sessions_col.find({}, col3)]
     df = pd.DataFrame(sessions)
@@ -35,4 +35,4 @@ def sessions():
     #maakt er een csv file van om dan die in te lezen in postgresql
 
 
-profiles()
+sessions()
