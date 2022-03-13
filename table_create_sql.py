@@ -30,7 +30,7 @@ CREATE TABLE products(
 CREATE TABLE profiles(
    _id varchar(100) PRIMARY KEY,
    buids text,
-   previously_recommended text, 
+   previously_recommended text array, 
    recommendations text
    )
 ''',# recommendations werkt denk ik niet want het is een object, maar ik wil alleen viewed_before en similars.
