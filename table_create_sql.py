@@ -19,7 +19,7 @@ info = (
    '''
 CREATE TABLE products(
    _id BIGSERIAL NOT NULL, 
-   naam varchar(100),
+   name varchar(100),
    price int,
    brand varchar(100),
    category varchar(100),
@@ -29,7 +29,8 @@ CREATE TABLE products(
 ''',
 '''
 CREATE TABLE profiles(
-   _id BIGSERIAL NOT NULL, 
+   _id BIGSERIAL NOT NULL,
+   buid BIGSERIAL NOT NULL, 
    recommendations varchar(100),
    previously_recommended varchar(100)
    )
@@ -47,9 +48,9 @@ for x in info:
 
 
 
-with open("products.csv", "r") as f:
-    next(f)
-    cursor.copy_from(f, 'products', sep=',')
+# with open("products.csv", "r") as f:
+#     next(f)
+#     cursor.copy_from(f, 'products', sep=',')
 
 con.commit()
 con.commit()
