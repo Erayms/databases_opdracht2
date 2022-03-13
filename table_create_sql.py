@@ -22,8 +22,8 @@ CREATE TABLE products(
    brand varchar(100),
    category text,
    gender varchar(100),
-   sub_sub_category varchar(100), 
-   sub_category varchar(100)
+   sub_category text,
+   sub_sub_category text 
    )
 ''',
 '''
@@ -36,6 +36,7 @@ CREATE TABLE profiles(
 ''',# recommendations werkt denk ik niet want het is een object, maar ik wil alleen viewed_before en similars.
 '''
 CREATE TABLE sessions(
+   _id varchar(100),
    buid text PRIMARY KEY,
    preferences text)                     
 ''')# preferences werkt denk ik niet want het is een object
