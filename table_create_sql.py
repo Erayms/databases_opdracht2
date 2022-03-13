@@ -18,11 +18,11 @@ cursor.execute("DROP TABLE IF EXISTS sessions")
 info = (
    '''
 CREATE TABLE products(
-   _id BIGSERIAL NOT NULL PRIMARY KEY,
+   _id varchar(100) PRIMARY KEY,
    brand varchar(100),
-   category varchar(100),
+   category text,
    gender varchar(100), 
-   name varchar(100),
+   price text ARRAY,
    sub_category varchar(100)
    )
 ''',
@@ -43,6 +43,7 @@ CREATE TABLE sessions(
 
 for x in info:
    cursor.execute(x)
+
 
 con.commit()
 con.close()

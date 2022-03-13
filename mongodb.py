@@ -9,7 +9,7 @@ def products():
     products_col = db["products"]
     #selling_price = products_col["price"]["selling_price"]
     #dacht dat dit kon maar het pakt niks, wilde alleen selling_price
-    col = {'_id': 1, 'name': 1, 'brand': 1, 'category': 1, 'sub_category': 1, 'gender': 1}
+    col = {'_id': 1, 'brand': 1, 'category': 1, 'gender': 1, 'name': 1, 'price': 1,'sub_category': 1}
     #pakt hier alleen de dingen met een 1 erbij
     products = [x for x in products_col.find({}, col)]
     df = pd.DataFrame(products)
@@ -35,5 +35,6 @@ def sessions():
     df = pd.DataFrame(sessions)
     df.to_csv("sessions.csv", index=False)
     #maakt er een csv file van om dan die in te lezen in postgresql
+
 
 products()

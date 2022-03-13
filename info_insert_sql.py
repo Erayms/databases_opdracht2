@@ -7,9 +7,9 @@ con = psycopg2.connect(
         password='MattyJim02')
 cursor = con.cursor()
 
-with open('products.csv', 'r') as f:
-    # Notice that we don't need the `csv` module.
-    next(f) # Skip the header row.
-    cursor.copy_from(f, 'products', sep=',')
+
+with open('sessions.csv', 'r') as f:
+        next(f)
+        cursor.copy_from(f, 'sessions', sep=",")
 
 con.commit()
