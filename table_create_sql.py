@@ -18,21 +18,21 @@ cursor.execute("DROP TABLE IF EXISTS sessions")
 info = (
    '''
 CREATE TABLE products(
-   _id BIGSERIAL NOT NULL, 
-   name varchar(100),
-   price int,
+   _id BIGSERIAL NOT NULL,
    brand varchar(100),
    category varchar(100),
-   sub_category varchar(100),
-   gender varchar(100)
+   gender varchar(100), 
+   name varchar(100),
+   price int,
+   sub_category varchar(100)
    )
 ''',
 '''
 CREATE TABLE profiles(
    _id BIGSERIAL NOT NULL,
-   buid BIGSERIAL NOT NULL, 
-   recommendations varchar(100),
-   previously_recommended varchar(100)
+   buids BIGSERIAL NOT NULL,
+   previously_recommended varchar(100), 
+   recommendations varchar(100)
    )
 ''',
 '''
@@ -55,4 +55,3 @@ for x in info:
 con.commit()
 con.commit()
 con.close()
-
