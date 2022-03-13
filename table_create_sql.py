@@ -33,18 +33,15 @@ CREATE TABLE profiles(
    buids text,
    recommendations varchar
    )
-''',# recommendations werkt denk ik niet want het is een object, maar ik wil alleen viewed_before en similars.
+''',
 '''
 CREATE TABLE sessions(
    _id varchar,
    buid varchar,
    preferences text
    )                     
-''')# preferences werkt denk ik niet want het is een object
-
+''')
 for x in info:
    cursor.execute(x)
-
-
 con.commit()
 con.close()

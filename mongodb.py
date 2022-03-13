@@ -35,4 +35,6 @@ def sessions():
     #maakt er een csv file van om dan die in te lezen in postgresql
 
 
-sessions()
+# products()
+# profiles()
+# sessions()
