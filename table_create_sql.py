@@ -30,15 +30,15 @@ CREATE TABLE products(
 CREATE TABLE profiles(
    _id varchar(100) PRIMARY KEY,
    buids text,
-   previously_recommended text array, 
    recommendations text
    )
 ''',# recommendations werkt denk ik niet want het is een object, maar ik wil alleen viewed_before en similars.
 '''
 CREATE TABLE sessions(
    _id varchar(100),
-   buid text PRIMARY KEY,
-   preferences text)                     
+   buid varchar(100) PRIMARY KEY,
+   preferences text
+   )                     
 ''')# preferences werkt denk ik niet want het is een object
 
 for x in info:
