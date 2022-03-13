@@ -22,6 +22,7 @@ CREATE TABLE products(
    brand varchar(100),
    category text,
    gender varchar(100),
+   price varchar(100),
    sub_category text,
    sub_sub_category text 
    )
