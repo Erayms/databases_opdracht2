@@ -30,6 +30,7 @@ CREATE TABLE products(
 '''
 CREATE TABLE profiles(
    _id varchar(100),
+   order_ids varchar, 
    buids text,
    recommendations varchar
    )
